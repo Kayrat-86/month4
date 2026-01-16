@@ -6,6 +6,7 @@ def first_products(request):
     if request.method == 'GET':
         return HttpResponse("Кимчи, рис, кимпап, пулькоги, чачжанмен-топ 5 продуктов питания в Корее.")
 
+
 def second_products(request):
     if request.method == 'GET':
         now = datetime.now()
@@ -13,6 +14,7 @@ def second_products(request):
             f"Дата: {now.strftime('%d.%m.%Y')}\n"
             f"Время: {now.strftime('%H:%M:%S')}" ,
         )
+
 
 def third_products(request):
     if request.method == 'GET':
