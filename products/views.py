@@ -29,12 +29,14 @@ def products_detail(request, id):
     )
 
 
-def first_products(request):
+
+
+def korean_foods(request):
     if request.method == 'GET':
         return HttpResponse("Кимчи, рис, кимпап, пулькоги, чачжанмен-топ 5 продуктов питания в Корее.")
 
 
-def second_products(request):
+def date_time(request):
     if request.method == 'GET':
         now = datetime.now()
         return HttpResponse(
@@ -43,6 +45,6 @@ def second_products(request):
         )
 
 
-def third_products(request):
+def about_myself(request):
     if request.method == 'GET':
-        return HttpResponse('<img src="blob:https://web.telegram.org/e5ec8621-adf1-42bc-a6a0-b9211b005697"><p>Привет меня зовут Кайрат, мне 19 лет.</p>')
+        return HttpResponse('<img src="https://st4.depositphotos.com/3881799/27242/i/450/depositphotos_272424264-stock-photo-hacker-working-laptop-dark.jpg"><p>Привет меня зовут Кайрат, мне 19 лет.</p>')
