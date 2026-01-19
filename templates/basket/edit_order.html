@@ -1,0 +1,41 @@
+{% load static %}
+
+{% include '../header.html' %}
+
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать заказ</title>
+</head>
+<body>
+    <h1>Редактировать заказ</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>ФИО:</label><br>
+        <input type="text" name="full_name" value="{{ basket.full_name }}" required><br><br>
+
+        <label>Телефон:</label><br>
+        <input type="text" name="phone" value="{{ basket.phone }}" required><br><br>
+
+        <label>Адрес:</label><br>
+        <input type="text" name="address" value="{{ basket.address }}" required><br><br>
+
+        <label>Количество:</label><br>
+        <input type="number" name="quantity" value="{{ basket.quantity }}" min="1" required><br><br>
+
+        <button type="submit">Сохранить</button>
+    </form>
+
+    <br>
+    <a href="{% url 'basket_list' %}">Назад в корзину</a>
+</body>
+</html>
+
+
+
+{% include '../footer.html' %}

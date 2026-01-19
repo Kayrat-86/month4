@@ -5,11 +5,10 @@
 
     <nav class="header__nav">
         <a href="{% url 'home_page' %}">Главная</a>
-        <a href="{% url 'blog_one' %}">Блог</a>
         <a href="{% url 'about_myself' %}">О нас</a>
-        <a href="#">BASKET</a>
-        <a href="#">Регистрация</a>
-        <a href="#">Авторизация</a>
+        <a href="#">Контакты</a>
+        <a href="#">Продукты</a>
+        <a href="{% url 'basket_list' %}">BASKET</a>
         <a href="#">Hashtags</a>
         <a href="/admin/">Админ-панель</a>
     </nav>

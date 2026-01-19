@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+
+{% include '../header.html' %}
+
+<div class="basket-container">
+    <h1 class="basket-title">Корзина</h1>
+
+    {% if baskets %}
+        <table class="basket-table">
+            <tr>
+                <th>Товар</th>
+                <th>ФИО</th>
+                <th>Телефон</th>
+                <th>Адрес</th>
+                <th>Кол-во</th>
+                <th>Действия</th>
+            </tr>
+
+            {% for basket in baskets %}
+            <tr>
+                <td>{{ basket.product.name_products }}</td>
+                <td>{{ basket.full_name }}</td>
+                <td>{{ basket.phone }}</td>
+                <td>{{ basket.address }}</td>
+                <td>{{ basket.quantity }}</td>
+                <td class="basket-actions">
+                    <a href="{% url 'edit_order' basket.id %}" class="edit">✏️</a>
+                    <a href="{% url 'delete_from_basket' basket.id %}" class="delete">❌</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p class="empty-basket">Корзина пуста</p>
+    {% endif %}
+</div>
+
+{% include '../footer.html' %}
+</body>
+</html>
