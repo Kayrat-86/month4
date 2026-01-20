@@ -1,0 +1,42 @@
+{% load static %}
+
+{% include '../header.html' %}
+
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список кандидатов</title>
+</head>
+<body>
+
+<h2>Анкеты кандидатов</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Имя</th>
+        <th>Email</th>
+        <th>Телефон</th>
+        <th>Опыт</th>
+        <th>Стек</th>
+        <th>Зарплата</th>
+    </tr>
+
+    {% for c in candidates %}
+    <tr>
+        <td>{{ c.full_name }}</td>
+        <td>{{ c.email }}</td>
+        <td>{{ c.phone }}</td>
+        <td>{{ c.experience }} лет</td>
+        <td>{{ c.stack }}</td>
+        <td>{{ c.desired_salary }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+
+{% include '../footer.html' %}

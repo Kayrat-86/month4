@@ -1,0 +1,26 @@
+{% load static %}
+
+{% include '../header.html' %}
+
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация кандидата</title>
+</head>
+<body>
+
+<h2>Анкета Backend-разработчика</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить анкету</button>
+</form>
+
+</body>
+</html>
+
+{% include '../footer.html' %}

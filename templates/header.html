@@ -7,8 +7,11 @@
         <a href="{% url 'home_page' %}">Главная</a>
         <a href="{% url 'about_myself' %}">О нас</a>
         <a href="#">Контакты</a>
-        <a href="#">Продукты</a>
+        <a href="{% url 'home_page' %}">Продукты</a>
         <a href="{% url 'basket_list' %}">BASKET</a>
+        <a href="{% url 'register' %}">Регистрация</a>
+        <a href="{% url 'login' %}">Автороизация</a>
+        <a href="{% url 'candidate_list' %}">Анкеты</a>
         <a href="#">Hashtags</a>
         <a href="/admin/">Админ-панель</a>
     </nav>

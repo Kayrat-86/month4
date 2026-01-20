@@ -451,3 +451,184 @@ body {
     color: #777;
     margin-top: 40px;
 }
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* ===== HEADER ===== */
+nav {
+    background: #0f172a;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #e2e8f0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* ===== TITLES ===== */
+h1, h2 {
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+/* ===== FORMS ===== */
+form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5f5;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+button {
+    background: #38bdf8;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0284c7;
+}
+
+/* ===== TABLE ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+th, td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+th {
+    background: #0f172a;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    margin-top: 60px;
+}
+/* ===== CANDIDATES PAGE ===== */
+
+body {
+    background: #f1f5f9;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Центрируем контент */
+h2 {
+    text-align: center;
+    margin: 30px 0;
+    font-size: 28px;
+    color: #0f172a;
+}
+
+/* Контейнер для таблицы */
+table {
+    margin: 0 auto 40px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 1000px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Заголовки */
+table th {
+    background: #38bdf8;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Ячейки */
+table td {
+    padding: 12px 14px;
+    text-align: center;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+/* Полосатость строк */
+table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Наведение */
+table tr:hover {
+    background: #e0f2fe;
+    transition: 0.3s;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    table {
+        font-size: 13px;
+    }
+    table th, table td {
+        padding: 10px;
+    }
+}
