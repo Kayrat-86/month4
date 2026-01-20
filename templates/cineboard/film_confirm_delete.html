@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="delete-wrapper">
+    <h2>🗑 Удаление фильма</h2>
+    <p>Вы уверены, что хотите удалить фильм:</p>
+    <h3>"{{ object.title }}"</h3>
+
+    <form method="post" class="delete-form">
+        {% csrf_token %}
+        <button type="submit" class="btn-danger">Удалить</button>
+        <a href="{% url 'film_list' %}" class="btn-cancel">Отмена</a>
+    </form>
+</div>
+
+{% endblock %}

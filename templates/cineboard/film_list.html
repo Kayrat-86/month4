@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Каталог фильмов</h1>
+
+<form method="get">
+    <input type="text" name="q" placeholder="Поиск фильма...">
+    <button>Найти</button>
+</form>
+
+<div class="genres">
+    <a href="/">Все</a>
+    {% for genre in genres %}
+        <a href="/?genre={{ genre.slug }}">{{ genre.name }}</a>
+    {% endfor %}
+</div>
+
+<div class="sort-panel">
+    <a href="?sort=latest" class="sort-btn">🕒 Последние</a>
+    <a href="?sort=rating" class="sort-btn">⭐ По рейтингу</a>
+</div>
+
+<div class="film-grid">
+    {% for film in films %}
+        <div class="film-card">
+            {% if film.image %}
+                <img src="{{ film.image.url }}">
+            {% endif %}
+            <h3>{{ film.title }}</h3>
+            <p>⭐ {{ film.rating }}</p>
+            <a href="{% url 'film_detail' film.id %}">Подробнее</a>
+        </div>
+    {% empty %}
+        <p>Фильмы не найдены</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h2>{{ film.title }}</h2>
+<p>{{ film.description }}</p>
+<p>👁 Просмотров: {{ film.views }}</p>
+<div class="stars">
+    {% for i in "12345" %}
+        {% if forloop.counter <= film.rating %}
+            ⭐
+        {% else %}
+            ☆
+        {% endif %}
+    {% endfor %}
+</div>
+
+<form action="{% url 'film_like' film.id %}" method="post">
+    {% csrf_token %}
+    <button class="like-btn">
+        ❤️ {{ film.likes.count }}
+    </button>
+</form>
+
+
+{% if user.is_authenticated %}
+    <div class="film-actions">
+        <a href="{% url 'film_edit' film.id %}" class="btn edit-btn">✏️ Изменить</a>
+        <a href="{% url 'film_delete' film.id %}" class="btn delete-btn">🗑 Удалить</a>
+    </div>
+{% endif %}
+
+
+<h3>Комментарии</h3>
+
+<div class="comments">
+    {% for comment in film.comments.all %}
+        <div class="comment-box">
+            <strong>{{ comment.user }}</strong>
+            <p>{{ comment.text }}</p>
+            <small>{{ comment.created_at|date:"d.m.Y H:i" }}</small>
+        </div>
+    {% empty %}
+        <p>Комментариев пока нет</p>
+    {% endfor %}
+</div>
+
+
+{% if user.is_authenticated %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Отправить</button>
+</form>
+{% else %}
+<p>Войдите, чтобы оставить комментарий</p>
+{% endif %}
+
+{% if film.image %}
+    <img src="{{ film.image.url }}" style="max-width:300px; border-radius:10px;">
+{% endif %}
+
+{% if film.image %}
+<img src="{{ film.image.url }}" class="film-poster">
+{% endif %}
+
+
+{% endblock %}
