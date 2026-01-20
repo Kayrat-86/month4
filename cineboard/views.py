@@ -26,6 +26,7 @@ class RegisterView(CreateView):
     success_url = reverse_lazy('login')
 
 
+
 class FilmListView(ListView):
     model = Film
     template_name = 'cineboard/film_list.html'

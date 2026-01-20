@@ -9,6 +9,7 @@ class Genre(models.Model):
         return self.name
 
 
+
 class Film(models.Model):
     title = models.CharField(max_length=150)
     description = models.TextField()
